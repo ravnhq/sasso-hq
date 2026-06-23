@@ -1,0 +1,19 @@
+# dispatch-kit per-repo config. Copy to <repo>/.claude/brain/config.sh and edit.
+# Use the `: "${VAR:=value}"` form so environment overrides still win.
+
+# Where issues + PRs live. Defaults to the repo's GitHub origin if unset.
+# : "${ISSUES_REPO:=owner/repo}"
+
+# Green-light check the worker must pass before opening its PR. Repo-specific.
+: "${GREEN_LIGHT_CMD:=npm install && npm run lint && npm run build}"
+
+# Worker model + effort. WORKER_EFFORT: max | ultracode | <raw --effort value>.
+: "${WORKER_MODEL:=claude-opus-4-8}"
+: "${WORKER_EFFORT:=max}"
+
+# Worker dispatcher: cmux (default) | tmux | plain.
+: "${DISPATCHER:=cmux}"
+
+# Worktree slot location (defaults: siblings of the repo, named <repo>-wt-<id>).
+# : "${WT_BASE:=/abs/path/to/parent}"
+# : "${WT_PREFIX:=myrepo-wt-}"

@@ -1,0 +1,94 @@
+# Locked task-tag vocabulary + skill assignments. Core-group owned (CODEOWNERS).
+# CI fails if a first-party skill is missing here or uses a tag outside `vocab`.
+# The recommend-workflow skill reads the generated catalog (built from this file)
+# to map an engineer's free-text task to skills and a workflow playbook.
+
+vocab:
+  - feature-dev    # building a new feature end-to-end
+  - bugfix         # fixing a reported defect
+  - debugging      # diagnosing unknown-cause failures / regressions
+  - review         # code review, commit hygiene, standards
+  - refactor       # restructuring without behavior change
+  - testing        # writing or improving tests
+  - planning       # specs, PRDs, issue breakdown, design interviews
+  - docs           # documentation
+  - infra          # CI/CD, deploy, cloud, terraform
+  - security       # security review, auth, secrets
+  - data           # data/ML pipelines, analysis
+  - frontend       # UI / component / styling / client-side work (web + mobile)
+  - perf           # performance profiling + optimization (frontend or backend)
+  - meta           # skills about the workflow itself (onboarding, handoff, authoring)
+
+# First-party skills shipped in this repo. Every skills/*/SKILL.md must appear here.
+skills:
+  onboarding: [meta]
+  recommend-workflow: [meta]
+  code-review: [review, security]
+  commit-conventions: [review]
+  sdd-kit: [planning, feature-dev]
+  dispatch-kit: [feature-dev]
+  handoff: [meta]
+  grill-me: [planning]
+  grill-with-docs: [planning]
+  to-prd: [planning]
+  to-issues: [planning]
+  improve-codebase-architecture: [refactor]
+  map-the-codebase: [refactor]
+  write-a-skill: [meta]
+  triage: [planning]
+  zoom-out: [meta]
+  prototype: [planning, feature-dev]
+  caveman: [meta]
+  component-design: [frontend, feature-dev]
+  forms-and-validation: [frontend, feature-dev]
+  native-performance: [frontend, perf]
+  touch-interaction: [frontend, feature-dev]
+  mobile-navigation: [frontend, feature-dev]
+  frontend-testing: [frontend, testing]
+  frontend-performance: [frontend, perf]
+  devtools-debugging: [frontend, debugging]
+  accessibility-audit: [frontend, review]
+  animation-and-motion: [frontend, feature-dev]
+  data-fetching: [frontend, feature-dev]
+  styling-systems: [frontend, feature-dev]
+  state-management: [frontend, feature-dev]
+  scaffold-bot: [feature-dev]
+  bot-session-state: [feature-dev]
+  bot-safety: [security]
+  meta-messaging: [feature-dev, infra]
+  bot-brain-basics: [feature-dev]
+  bot-brain-agent: [feature-dev]
+  deploy-bot: [infra]
+  testing-bots: [testing]
+
+# Referenced skills NOT in this repo — installed from another marketplace and
+# recommended by the SDD pipeline. Listed so recommend-workflow can suggest them.
+external:
+  tdd:
+    plugin: superpowers
+    tags: [testing]
+    description: Red-green-refactor test-driven development.
+  systematic-debugging:
+    plugin: superpowers
+    tags: [debugging]
+    description: Disciplined root-cause debugging before proposing fixes.
+  writing-plans:
+    plugin: superpowers
+    tags: [planning]
+    description: Turn a spec into a step-by-step implementation plan.
+  executing-plans:
+    plugin: superpowers
+    tags: [feature-dev]
+    description: Execute a written plan with review checkpoints.
+  subagent-driven-development:
+    plugin: superpowers
+    tags: [feature-dev]
+    description: Execute independent plan tasks via parallel subagents.
+  dispatching-parallel-agents:
+    plugin: superpowers
+    tags: [feature-dev]
+    description: Fan out 2+ independent tasks to parallel agents.
+  requesting-code-review:
+    plugin: superpowers
+    tags: [review]
+    description: Request structured code review before merge.

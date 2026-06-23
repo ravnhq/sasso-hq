@@ -1,0 +1,8 @@
+{
+  "name": "dispatch-kit",
+  "description": "Optional: dispatch autonomous Claude workers into a pool of git worktrees from inside a session. /dispatch /adopt /status /reap /pool.",
+  "author": {
+    "name": "HQ Core Team",
+    "email": "raphaelsasso@ravn.co"
+  }
+}

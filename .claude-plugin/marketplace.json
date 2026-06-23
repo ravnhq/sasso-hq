@@ -1,0 +1,40 @@
+{
+  "name": "hq",
+  "owner": {
+    "name": "HQ Core Team",
+    "email": "raphaelsasso@ravn.co"
+  },
+  "description": "Org agent hub: unified Claude Code skills, plugins, and workflow playbooks.",
+  "plugins": [
+    {
+      "name": "hq-core",
+      "source": "./plugins/hq-core",
+      "description": "Mandatory core: onboarding, workflow recommendations, code-review standards, commit conventions, and the SDD pipeline."
+    },
+    {
+      "name": "codebase-toolkit",
+      "source": "./plugins/codebase-toolkit",
+      "description": "Optional: architecture deepening, skill authoring, issue triage, zoom-out context, and throwaway prototyping."
+    },
+    {
+      "name": "fun",
+      "source": "./plugins/fun",
+      "description": "Optional: caveman mode."
+    },
+    {
+      "name": "chatbot-toolkit",
+      "source": "./plugins/chatbot-toolkit",
+      "description": "Optional: build a full-stack, Claude-powered Meta messaging bot (WhatsApp + Instagram)."
+    },
+    {
+      "name": "dispatch-kit",
+      "source": "./plugins/dispatch-kit",
+      "description": "Optional: dispatch autonomous Claude workers into a pool of git worktrees from inside a session — the runtime tail of the SDD pipeline."
+    },
+    {
+      "name": "frontend-toolkit",
+      "source": "./plugins/frontend-toolkit",
+      "description": "Optional: cross-cutting frontend craft skills for React-family web + React Native — components, state, styling, a11y, performance, and testing."
+    }
+  ]
+}

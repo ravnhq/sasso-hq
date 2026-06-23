@@ -1,0 +1,8 @@
+{
+  "name": "hq-core",
+  "description": "Mandatory core: onboarding, workflow recommendations, code-review standards, commit conventions, and the SDD pipeline.",
+  "author": {
+    "name": "HQ Core Team",
+    "email": "raphaelsasso@ravn.co"
+  }
+}

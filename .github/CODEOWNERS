@@ -1,0 +1,7 @@
+# hq-core and the locked task-tag vocabulary are owned by the core group.
+# Everything else: any maintainer review.
+
+/plugins/hq-core/                       @raphaelsasso-ravn
+/plugins/hq-core/taxonomy.yml           @raphaelsasso-ravn
+/.claude-plugin/marketplace.json        @raphaelsasso-ravn
+/SPEC.md                                @raphaelsasso-ravn

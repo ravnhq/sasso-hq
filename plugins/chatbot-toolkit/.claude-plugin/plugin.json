@@ -1,0 +1,8 @@
+{
+  "name": "chatbot-toolkit",
+  "description": "Optional: build a full-stack, Claude-powered Meta messaging bot (WhatsApp + Instagram) — brain, channels, session state, safety, and deploy.",
+  "author": {
+    "name": "HQ Core Team",
+    "email": "raphaelsasso@ravn.co"
+  }
+}

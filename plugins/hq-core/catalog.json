@@ -1,0 +1,481 @@
+{
+  "skills": [
+    {
+      "name": "bot-brain-agent",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Teach the Claude Agent SDK (claude-agent-sdk) and how to layer it behind the reference app's Brain interface \u2014 the agent loop, in-process tools, MCP, and context management. Use when a bot needs an agent that runs tools/files/MCP autonomously, when outgrowing a hand-rolled messages.create loop, or when upgrading ClaudeBrain without changing respond().",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "bot-brain-basics",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Teach the raw Anthropic Python SDK behind the reference app's Brain \u2014 messages.create, the tool-use loop, streaming, and prompt caching. Use when implementing or extending a bot Brain, calling Claude directly, adding tools/streaming/caching to messages.create, or asking how ClaudeBrain talks to the model.",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "bot-safety",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Make a public Claude bot safe with deterministic guardrails \u2014 block prompt-injection on input, redact PII (email/phone/SSN/card) on input and output, and short-circuit blocked messages with a canned reply. Use when hardening a bot for public traffic, adding input/output screening, or filling the chatbot-toolkit Guardrails seam.",
+      "tags": [
+        "security"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "bot-session-state",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Persist bot conversation history in Postgres using the chatbot-toolkit reference app's PostgresSessionStore \u2014 asyncpg, a lazy pool, and a temp-Postgres test. Use when sessions must survive restarts, moving a bot off in-memory storage, or adding a durable SessionStore.",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "deploy-bot",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Get the chatbot-toolkit reference app onto a public HTTPS endpoint Meta will accept \u2014 build the bundled Dockerfile and deploy to a container PaaS (Fly / Railway / Render) with env/secret config, or tunnel to your laptop for dev. Use when deploying a bot, Dockerizing the reference app, setting up a webhook URL Meta accepts, configuring deploy secrets, or exposing a local bot for webhook testing.",
+      "tags": [
+        "infra"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "meta-messaging",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Connect the chatbot-toolkit reference app to Meta \u2014 create a Meta App, pass the webhook verify handshake, validate X-Hub-Signature-256, and send via the Meta Graph API for WhatsApp and Instagram. Use when setting up a Meta App, wiring a WhatsApp or Instagram webhook, debugging webhook verification or signature failures, parsing inbound payloads, or sending WhatsApp templates/media or Instagram DMs.",
+      "tags": [
+        "feature-dev",
+        "infra"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "scaffold-bot",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Stand up a full-stack Claude-powered WhatsApp bot from the chatbot-toolkit reference app \u2014 FastAPI webhook, Channel/Brain/SessionStore/Guardrails modules, end to end. Use when starting a new chatbot, scaffolding a messaging bot, or wiring Claude to WhatsApp/Instagram.",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "testing-bots",
+      "plugin": "chatbot-toolkit",
+      "source": "hq",
+      "description": "Test a Meta messaging bot in the chatbot-toolkit stack without live services \u2014 simulate webhook payloads from captured fixtures, sign them like Meta does, mock the Graph and Anthropic APIs, and assert behavior through public interfaces. Use when writing tests for a bot, simulating a webhook, faking an inbound WhatsApp/Instagram message, mocking the Graph or Anthropic API, testing the brain or guardrails, or asking how the reference app tests itself.",
+      "tags": [
+        "testing"
+      ],
+      "install": "claude plugin install chatbot-toolkit@hq"
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "plugin": "codebase-toolkit",
+      "source": "hq",
+      "description": "Find deepening opportunities in a codebase, informed by the domain language in CONTEXT.md and the decisions in docs/adr/. Use when the user wants to improve architecture, find refactoring opportunities, consolidate tightly-coupled modules, or make a codebase more testable and AI-navigable.",
+      "tags": [
+        "refactor"
+      ],
+      "install": "claude plugin install codebase-toolkit@hq"
+    },
+    {
+      "name": "map-the-codebase",
+      "plugin": "codebase-toolkit",
+      "source": "hq",
+      "description": "Build or refresh an offline structural map of a repo (a code graph) that other skills can read. Use before improve-codebase-architecture, or when you want a real call/import/reference graph of the codebase instead of reasoning from memory.",
+      "tags": [
+        "refactor"
+      ],
+      "install": "claude plugin install codebase-toolkit@hq"
+    },
+    {
+      "name": "prototype",
+      "plugin": "codebase-toolkit",
+      "source": "hq",
+      "description": "Build a throwaway prototype to flesh out a design before committing to it. Routes between two branches \u2014 a runnable terminal app for state/business-logic questions, or several radically different UI variations toggleable from one route. Use when the user wants to prototype, sanity-check a data model or state machine, mock up a UI, explore design options, or says \"prototype this\", \"let me play with it\", \"try a few designs\".",
+      "tags": [
+        "planning",
+        "feature-dev"
+      ],
+      "install": "claude plugin install codebase-toolkit@hq"
+    },
+    {
+      "name": "triage",
+      "plugin": "codebase-toolkit",
+      "source": "hq",
+      "description": "Triage issues through a state machine driven by triage roles. Use when user wants to create an issue, triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, or manage issue workflow.",
+      "tags": [
+        "planning"
+      ],
+      "install": "claude plugin install codebase-toolkit@hq"
+    },
+    {
+      "name": "write-a-skill",
+      "plugin": "codebase-toolkit",
+      "source": "hq",
+      "description": "Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, or build a new skill.",
+      "tags": [
+        "meta"
+      ],
+      "install": "claude plugin install codebase-toolkit@hq"
+    },
+    {
+      "name": "zoom-out",
+      "plugin": "codebase-toolkit",
+      "source": "hq",
+      "description": "Tell the agent to zoom out and give broader context or a higher-level perspective. Use when you're unfamiliar with a section of code or need to understand how it fits into the bigger picture.",
+      "tags": [
+        "meta"
+      ],
+      "install": "claude plugin install codebase-toolkit@hq"
+    },
+    {
+      "name": "dispatch-kit",
+      "plugin": "dispatch-kit",
+      "source": "hq",
+      "description": "Use when you want to hand work to autonomous Claude workers instead of doing it inline \u2014 files an issue and spawns a worker in an isolated git worktree, then tracks and reaps it. The runtime tail of the SDD pipeline. Commands - /dispatch /adopt /status /reap /pool.",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install dispatch-kit@hq"
+    },
+    {
+      "name": "accessibility-audit",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Audit and fix accessibility (a11y) issues against WCAG 2.2 AA across React-family web and React Native \u2014 semantics, keyboard, focus, accessible names, contrast, and motion. Use when auditing a UI for accessibility, fixing a11y bugs, adding ARIA or focus management, reviewing for WCAG compliance, or making components usable with a screen reader and keyboard.",
+      "tags": [
+        "frontend",
+        "review"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "animation-and-motion",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Add motion that communicates and stays cheap \u2014 animate compositor-only properties (transform/opacity), drive it off the main/JS thread, and honor reduced-motion preferences on web and React Native. Use when adding a transition or animation, building a motion-heavy interaction, fixing janky or expensive animation, or making motion respect prefers-reduced-motion / OS accessibility settings.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "component-design",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Design React-family and React Native components with clear composition, prop boundaries, and ownership \u2014 when to split, when to compose, what to lift, and what to keep local. Use when creating a new component, refactoring a bloated one, deciding a component's props/children API, or reviewing component structure.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "data-fetching",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Handle async data the house way \u2014 treat server state as a cache (not useState + useEffect), render loading/error/empty/success explicitly, fetch with keys/dedup/revalidation, and mutate optimistically then reconcile. Use when fetching data in a component, adding caching, wiring loading/error states, building a mutation, or reviewing data-fetching code.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "devtools-debugging",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Debug frontend web issues against a live Chrome via the Chrome DevTools MCP instead of guessing from source \u2014 reproduce the bug in the running page, then read the real console, network, DOM, and performance signal. Use when a page throws a console error, a network request fails or returns the wrong data, layout or styling renders wrong, or an interaction janks, and when first wiring the DevTools MCP into a repo.",
+      "tags": [
+        "frontend",
+        "debugging"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "forms-and-validation",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Build accessible, well-validated forms in React-family web and React Native without reinventing the wheel \u2014 schema-driven validation, when validation runs, accessible errors, submission state, and mobile inputs. Use when building or reviewing a form, choosing a form/validation library, wiring client + server validation, or fixing form accessibility.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "frontend-performance",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Diagnose and fix frontend performance \u2014 Core Web Vitals (LCP, INP, CLS), JavaScript bundle size, and React render cost \u2014 with a measure-first method. Use when a page loads or responds slowly, a bundle is too large, a list or view janks, Lighthouse / Web Vitals scores are poor, or before shipping a perf-sensitive feature.",
+      "tags": [
+        "frontend",
+        "perf"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "frontend-testing",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Test React-family and React Native components and user flows by behavior, not implementation detail \u2014 accessible queries, real user interaction, async awaited honestly, and the network mocked at the boundary. Use when writing or reviewing component/integration tests, deciding what to assert, fixing flaky or brittle tests, or choosing what to mock.",
+      "tags": [
+        "frontend",
+        "testing"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "mobile-navigation",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Structure React Native (and React-family web) navigation correctly from the start \u2014 what's a route vs local state, typed params, stacks/tabs/modals, back behavior, and deep linking. Use when adding navigation to an app, adding a screen or flow, choosing React Navigation vs Expo Router, deciding what a route's params should carry, or reviewing navigation structure.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "native-performance",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Keep React Native (and React-family) apps smooth \u2014 list virtualization, native-bridge cost, and render cost. Use when a list janks or drops frames, when scrolling or gestures stutter, when a screen re-renders too much, or when profiling a slow mobile UI.",
+      "tags": [
+        "frontend",
+        "perf"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "state-management",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Choose where state belongs \u2014 local, server-cache, global-client, or URL \u2014 instead of reaching for one tool (Redux, Context, a global store) reflexively. Use when adding state to a feature, deciding whether something belongs in a global store, wiring up server data, or untangling prop-drilling and over-globalized state.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "styling-systems",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Apply design tokens and a coherent styling architecture \u2014 one source of truth for color, spacing, type, and theming \u2014 instead of ad-hoc CSS and magic numbers. Use when setting up styling for a new app, taming scattered or duplicated styles, building a light/dark theme, choosing a styling approach (CSS Modules, utility classes, CSS-in-JS, RN StyleSheet), or reviewing styling architecture.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "touch-interaction",
+      "plugin": "frontend-toolkit",
+      "source": "hq",
+      "description": "Build touch and gesture UX that feels native \u2014 thumb-sized targets, feedback on touch-down, and continuous gestures (drag, swipe, pinch) that track the finger on the UI thread without stealing scrolls. Use when adding a gesture, building a swipeable/draggable component, fixing janky or unresponsive touch, sizing tap targets, or reviewing touch interactions on web or React Native.",
+      "tags": [
+        "frontend",
+        "feature-dev"
+      ],
+      "install": "claude plugin install frontend-toolkit@hq"
+    },
+    {
+      "name": "caveman",
+      "plugin": "fun",
+      "source": "hq",
+      "description": "Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, and pleasantries while keeping full technical accuracy. Use when user says \"caveman mode\", \"talk like caveman\", \"use caveman\", \"less tokens\", \"be brief\", or invokes /caveman.\n",
+      "tags": [
+        "meta"
+      ],
+      "install": "claude plugin install fun@hq"
+    },
+    {
+      "name": "code-review",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Use when reviewing code, a diff, a branch, or a PR to the org's standard. Wraps the review mechanic with house quality gates \u2014 the org entry point for code review.",
+      "tags": [
+        "review",
+        "security"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "commit-conventions",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Use when writing a commit message or preparing a commit in any org repo. Enforces the house Conventional Commits format.",
+      "tags": [
+        "review"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "grill-me",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions \"grill me\".",
+      "tags": [
+        "planning"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "grill-with-docs",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, ADRs) inline as decisions crystallise. Use when user wants to stress-test a plan against their project's language and documented decisions.",
+      "tags": [
+        "planning"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "handoff",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Compact the current conversation into a handoff document for another agent to pick up.",
+      "tags": [
+        "meta"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "onboarding",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Use when an engineer first installs hq-core or asks how the org's agent setup works. Introduces the hub, grants the permissions the flow needs, ensures auto-updates work, sets up the Context7 docs MCP, asks what they're working on, and recommends + installs the right skills and workflow playbook.",
+      "tags": [
+        "meta"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "recommend-workflow",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Use when an engineer describes what they're working on and wants to know which skills and workflow to use. Maps a free-text task to the org's skills and workflow playbooks, then offers to install anything missing.",
+      "tags": [
+        "meta"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "sdd-kit",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Use when starting any non-trivial feature (3+ steps or an architectural decision). Orchestrates the org's spec-driven development pipeline from interview through reviewed, merged code.",
+      "tags": [
+        "planning",
+        "feature-dev"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "to-issues",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.",
+      "tags": [
+        "planning"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "to-prd",
+      "plugin": "hq-core",
+      "source": "hq",
+      "description": "Turn the current conversation context into a PRD and publish it to the project issue tracker. Use when user wants to create a PRD from the current context.",
+      "tags": [
+        "planning"
+      ],
+      "install": "claude plugin install hq-core@hq"
+    },
+    {
+      "name": "tdd",
+      "plugin": "superpowers",
+      "source": "external",
+      "description": "Red-green-refactor test-driven development.",
+      "tags": [
+        "testing"
+      ],
+      "install": "claude plugin install superpowers"
+    },
+    {
+      "name": "systematic-debugging",
+      "plugin": "superpowers",
+      "source": "external",
+      "description": "Disciplined root-cause debugging before proposing fixes.",
+      "tags": [
+        "debugging"
+      ],
+      "install": "claude plugin install superpowers"
+    },
+    {
+      "name": "writing-plans",
+      "plugin": "superpowers",
+      "source": "external",
+      "description": "Turn a spec into a step-by-step implementation plan.",
+      "tags": [
+        "planning"
+      ],
+      "install": "claude plugin install superpowers"
+    },
+    {
+      "name": "executing-plans",
+      "plugin": "superpowers",
+      "source": "external",
+      "description": "Execute a written plan with review checkpoints.",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install superpowers"
+    },
+    {
+      "name": "subagent-driven-development",
+      "plugin": "superpowers",
+      "source": "external",
+      "description": "Execute independent plan tasks via parallel subagents.",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install superpowers"
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "plugin": "superpowers",
+      "source": "external",
+      "description": "Fan out 2+ independent tasks to parallel agents.",
+      "tags": [
+        "feature-dev"
+      ],
+      "install": "claude plugin install superpowers"
+    },
+    {
+      "name": "requesting-code-review",
+      "plugin": "superpowers",
+      "source": "external",
+      "description": "Request structured code review before merge.",
+      "tags": [
+        "review"
+      ],
+      "install": "claude plugin install superpowers"
+    }
+  ]
+}

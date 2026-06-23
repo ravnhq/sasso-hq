@@ -1,0 +1,8 @@
+{
+  "name": "codebase-toolkit",
+  "description": "Optional: codebase mapping, architecture deepening, skill authoring, issue triage, zoom-out context, and throwaway prototyping.",
+  "author": {
+    "name": "HQ Core Team",
+    "email": "raphaelsasso@ravn.co"
+  }
+}

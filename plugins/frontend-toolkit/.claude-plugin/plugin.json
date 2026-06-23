@@ -1,0 +1,8 @@
+{
+  "name": "frontend-toolkit",
+  "description": "Optional: cross-cutting frontend craft skills for React-family web + React Native — components, state, styling, data fetching, forms, motion, accessibility, performance, and testing.",
+  "author": {
+    "name": "HQ Core Team",
+    "email": "raphaelsasso@ravn.co"
+  }
+}

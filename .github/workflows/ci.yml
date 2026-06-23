@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+
+      - name: JSON manifests parse
+        run: |
+          set -euo pipefail
+          for f in .claude-plugin/marketplace.json plugins/*/.claude-plugin/plugin.json; do
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$f"
+            echo "ok $f"
+          done
+
+      - name: SKILL.md frontmatter present
+        run: |
+          set -euo pipefail
+          fail=0
+          while IFS= read -r f; do
+            head -n1 "$f" | grep -qx -- '---' || { echo "missing frontmatter: $f"; fail=1; }
+          done < <(find plugins -name SKILL.md)
+          exit $fail
+
+      - name: Catalog fresh + taxonomy valid
+        # build-catalog.py errors if any skill is untagged or uses a tag outside
+        # the locked vocab; the diff check fails if the committed catalog is stale.
+        run: |
+          set -euo pipefail
+          python3 scripts/build-catalog.py
+          git diff --exit-code plugins/hq-core/catalog.json \
+            || { echo "catalog.json is stale — run scripts/build-catalog.py and commit"; exit 1; }
+
+      - name: Workflow playbooks reference real skills
+        run: python3 scripts/check-workflows.py

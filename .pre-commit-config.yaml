@@ -1,0 +1,17 @@
+repos:
+  - repo: local
+    hooks:
+      - id: build-catalog
+        name: build catalog.json from taxonomy
+        entry: python3 scripts/build-catalog.py
+        language: python
+        additional_dependencies: [pyyaml]
+        pass_filenames: false
+        files: ^plugins/.*/SKILL\.md$|^plugins/hq-core/taxonomy\.yml$
+      - id: check-workflows
+        name: validate workflow playbook skill refs
+        entry: python3 scripts/check-workflows.py
+        language: python
+        additional_dependencies: [pyyaml]
+        pass_filenames: false
+        files: ^plugins/hq-core/workflows/.*\.md$
